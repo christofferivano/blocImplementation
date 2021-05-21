@@ -1,0 +1,6 @@
+package com.example.poc_blocflutter;
+
+import io.flutter.embedding.android.FlutterActivity;
+
+public class MainActivity extends FlutterActivity {
+}
