@@ -2,22 +2,22 @@ class ItemModel {
   int page;
   int totalResult;
   int totalPages;
-  List<Result> result = [];
+  List<Result> _results = [];
 
   ItemModel.fromJson(Map<String, dynamic> parsedJson) {
-    print(parsedJson['result'].length);
+    print(parsedJson['results'].length);
     page = parsedJson['page'];
     totalResult = parsedJson['totalResult'];
     totalPages = parsedJson['totalPages'];
     List<Result> temp = [];
-    for (int i = 0; i < parsedJson['result'].length; i++) {
-      Result result = Result(parsedJson['result'][i]);
+    for (int i = 0; i < parsedJson['results'].length; i++) {
+      Result result = Result(parsedJson['results'][i]);
       temp.add(result);
     }
-    result = temp;
+    _results = temp;
   }
 
-  List<Result> get results => result;
+  List<Result> get results => _results;
   int get total_pages => totalPages;
   int get total_results => totalResult;
   int get pages => page;
